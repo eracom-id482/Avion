@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Jeu avion</title>
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+
+  <button id="left">Left</button>
+  <button id='right'>Right</button>
+  <button id="down">Down</button>
+  <button id="up">up</button>
+  <div id='airplane' class="airplane">
+    <img src="AirplaneGameAsset_2.svg" alt="airplane">
+
+  </div>
+
+
+  <script>
+
+      document.getElementById('airplane');
+
+      $('#right').on('click',function(){
+        console.log('ok');
+        $('#up').animate({'left': '+=50px'},'slow');
+      });
+
+  </script>
+
+
+  </body>
+</html>

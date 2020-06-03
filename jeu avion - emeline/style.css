@@ -1,3 +1,9 @@
-.airplane {
+#airplane {
   width: 10%;
+  position:relative;
+  z-index: 3;
+}
+
+#myCanvas{
+  z-index:1;
 }

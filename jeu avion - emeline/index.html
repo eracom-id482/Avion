@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Jeu avion</title>
+    <style>
+   * { padding: 0; margin: 0; }
+   canvas { background: pink; display: block; margin: 100px auto; }
+  </style>
     <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -13,24 +17,46 @@
   </head>
   <body>
 
-  <button id="left">Left</button>
-  <button id='right'>Right</button>
-  <button id="down">Down</button>
-  <button id="up">up</button>
-  <div id='airplane' class="airplane">
-    <img src="AirplaneGameAsset_2.svg" alt="airplane">
+      <button id="left">Left</button>
+      <button id='right'>Right</button>
+      <button id="down">Down</button>
+      <button id="up">up</button>
 
-  </div>
+      <canvas id="myCanvas" width="1000" height="1000"></canvas>
 
 
   <script>
 
-      document.getElementById('airplane');
+  var canvas = document.getElementById('myCanvas');
+       var ctx = canvas.getContext('2d');
+       var imageObj = new Image();
 
-      $('#right').on('click',function(){
-        console.log('ok');
-        $('#up').animate({'left': '+=50px'},'slow');
-      });
+  var axex = 10;
+  var axey = 920;
+
+       imageObj.src = 'AirplaneGameAsset_2.svg';
+
+       function drawAvion(){
+         ctx.drawImage(imageObj, axex,axey,70,70);
+
+       }
+
+       function draw() {
+         //ctx.clearRect(0, 0, canvas.width, canvas.height);
+         drawAvion();
+
+       }
+       setInterval(draw, 10);
+
+
+
+
+      document.getElementById('left').addEventListener("click", clickleft, false);
+
+      function clickleft(){
+        axex +=10;
+      }
+
 
   </script>
 
